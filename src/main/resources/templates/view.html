@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="fragments/fragment :: assets" />
+    <body>
+    <div th:replace="fragments/fragment :: header"></div>
+    	<h2>Lihat Data Mahasiwa</h2><h2 th:text="${student.npm}"></h2>
+    	
+    	<table id="studentTable" class="display" style="width:100%">
+    		<tr>
+    			<td><h6>NIK</h6></td>
+    			<td><h6 th:text="${student.npm}"></h6></td>
+    		</tr>
+    		<tr>
+    			<td><h6>Nama</h6></td>
+    			<td><h6 th:text="${student.nama}"></h6></td>
+    		</tr>
+    		<tr>
+    			<td><h6>Tempat/Tanggal Lahir</h6></td>
+    			<td><h6 th:text="${student.tempat_lahir}"></h6></td>
+    		</tr>
+    		<tr>
+    			<td><h6>Program Studi</h6></td>
+    			<td><h6 th:text="${prodi.nama_prodi}"></h6></td>
+    		</tr>
+    		<tr>
+    			<td><h6>Fakultas</h6></td>
+    			<td><h6 th:text="${fakultas.nama_fakultas}"></h6></td>
+    		</tr>
+    		<tr>
+    			<td><h6>Universitas</h6></td>
+    			<td><h6 th:text="${universitas.nama_univ}"></h6></td>
+    		</tr>
+    		<tr>
+    			<td><h6>Jenis Kelamin</h6></td>
+    			<td><h6 th:text="${student.jenis_kelamin==0} ? 'Wanita' : 'Pria'"></h6></td>
+    		</tr>
+    		<tr>
+    			<td><h6>Agama</h6></td>
+    			<td><h6 th:text="${student.agama}"></h6></td>
+    		</tr>
+    		<tr>
+    			<td><h6>Golongan Darah</h6></td>
+    			<td><h6 th:text="${student.golongan_darah}"></h6></td>
+    		</tr>
+    		<tr>
+    			<td><h6>Tahun Masuk</h6></td>
+    			<td><h6 th:text="${student.tahun_masuk}"></h6></td>
+    		</tr>
+    		<tr>
+    			<td><h6>Jalur Masuk</h6></td>
+    			<td><h6 th:text="${student.jalur_masuk}"></h6></td>
+    		</tr>
+    		<tr>
+    			<td><h6>Status</h6></td>
+    			<td><h6 th:text="${student.status}"></h6></td>
+    		</tr>
+    		<tr>
+    			<td><a th:href="'/mahasiswa/ubah/'+${student.npm}">Ubah Data</a></td>
+    		</tr>
+    	</table>
+    <div th:replace="fragments/fragment :: footer"></div>
+    </body>
+</html>
+

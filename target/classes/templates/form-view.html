@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/fragment :: assets" />
+<title>View Student</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+	<div th:replace="fragments/fragment :: header"></div>
+	<h1 class="page-header">Lihat Data Mahasiswa Berdasarkan NPM</h1>
+	<h3>Masukkan Nomor Pokok Mahasiswa</h3>
+	
+	<form action="/student/view/submit" method="get">
+		<div>
+			<label for="npm">NPM</label> <input type="text" name="npm" />
+		</div>
+		<div>
+			<button type="submit" name="action" value="save">Lihat</button>
+		</div>
+	</form>
+	<div th:replace="fragments/fragment :: footer"></div>
+</body>
+
+</html>
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="fragments/fragment :: assets" />
+    <body>
+    <div th:replace="fragments/fragment :: header"></div>
+    	<table id="studentTable" class="display" style="width:100%">
+    		<tr>
+    			<td><h6>Tahun</h6></td>
+    			<td><h6 th:text="${tahun_masuk}"></h6></td>
+    		</tr>
+    		<tr>
+    			<td><h6>Program Studi</h6></td>
+    			<td><h6 th:text="${program_studi}"></h6></td>
+    		</tr>
+    		<tr>
+    			<td><h6>Fakultas</h6></td>
+    			<td><h6 th:text="${fakultas}"></h6></td>
+    		</tr>
+    		<tr>
+    			<td><h6>Universitas</h6></td>
+    			<td><h6 th:text="${universitas}"></h6></td>
+    		</tr>
+    		<tr>
+    			<td>
+		  		<h6 th:text="${presentaseLulus == null}? '0' + ' %' "></h6>
+				</td>
+    			<td>
+    			<h6 th:text="${jlhMahasiswa==null} ? '0' : ${jlhMahasiswa} + ' dari ' + ${totalMahasiwa} + ' Mahasiswa Telah Lulus'"></h6>
+    			</td>
+    		</tr>
+    	</table>
+    <div th:replace="fragments/fragment :: footer"></div>
+    </body>
+</html>
+

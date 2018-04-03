@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/fragment :: assets" />
+
+<body>
+	<div th:replace="fragments/fragment :: header"></div>
+	<form action="/mahasiswa/ubah/submit" method="post" th:object="${student}">
+		  <div class="form-group">
+		    <label for="nama">ID</label>
+		    <input type="text" class="form-control" id="id" readonly="true" th:value="${student.id}" th:field="${student.id}" />
+		  </div>
+		  <div class="form-group">
+		    <label for="nama">NPM</label>
+		    <input type="text" class="form-control" id="npm" readonly="true" th:value="${student.npm}" th:field="${student.npm}" />
+		  </div>
+		  <div class="form-group">
+		    <label for="nama">Nama Lengkap</label>
+		    <input type="text" class="form-control" id="nama" name="nama" th:value="${student.nama}" th:field="${student.nama}" />
+		  </div>
+		  <div class="form-group">
+		    <label for="tempat_lahir">Tempat Lahir</label>
+		    <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir" th:value="${student.tempat_lahir}" th:field="${student.tempat_lahir}" />
+		  </div>
+		  <div class="form-group">
+		    <label for="tanggal_lahir">Tanggal Lahir</label>
+		    <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir" th:value="${student.tanggal_lahir}" th:field="${student.tanggal_lahir}" />
+		  </div>
+		  <div class="form-group">
+		    <label for="jenis_kelamin">Jenis Kelamin</label>
+		    <select class="form-control" id="jenis_kelamin" name="jenis_kelamin" th:value="${student.jenis_kelamin==0} ? 'Wanita' : 'Pria'" th:field="${student.jenis_kelamin}">
+		      	<option value="1">Laki-laki</option>
+				<option value="0">Perempuan</option>
+		    </select>
+		  </div>
+		  <div class="form-group">
+		    <label for="agama">Agama</label>
+		    <select class="form-control" id="agama" name="agama" th:value="${student.agama}" th:field="${student.agama}" >
+				<option value="Islam">Islam</option>
+				<option value="Kristen">Kristen</option>
+				<option value="Katolik">Katolik</option>
+				<option value="Konghucu">Konghucu</option>
+				<option value="Buddha">Buddha</option>
+				<option value="Hindu">Hindu</option>
+			</select>
+		  </div>
+		  <div class="form-group">
+		    <label for="golongan_darah">Golongan Darah</label>
+			<select class="form-control" id="golongan_darah" name="golongan_darah" th:value="${student.golongan_darah}" th:field="${student.golongan_darah}">
+				<option value="A+">A+</option>
+				<option value="A-">A-</option>
+				<option value="B+">B+</option>
+				<option value="B-">B-</option>
+				<option value="AB">AB</option>
+				<option value="O">O</option>
+			</select>
+		  </div>
+		  <div class="form-group">
+		    <label for="tahun_masuk">Tahun Masuk</label>
+		    <input type="text" class="form-control" id="tahun_masuk" name="tahun_masuk" th:value="${student.tahun_masuk}" th:field="${student.tahun_masuk}" />
+		  </div>
+		  <div class="form-group">
+		    <label for="jalur_masuk">Jalur Masuk</label>
+		    <select class="form-control" id="jalur_masuk" name="jalur_masuk" th:value="${student.jalur_masuk}" th:field="${student.jalur_masuk} ">
+				<option value="Undangan Olimpiade">Undangan Olimpiade</option>
+				<option value="Undangan Reguler/SNMPTN">Undangan Reguler / SNMPTN</option>
+				<option value="Undangan Paralel/PPKB">Undangan Paralel / PPK</option>
+				<option value="Ujian Tulis Bersama/SBMPTN">Ujian Tulis Bersama / SBMPTN</option>
+				<option value="Ujian Tulis Mandiri">Ujian Tulis Mandiri</option>
+			</select>
+		  </div>
+		  <div class="form-group">
+		    <label for="id_prodi">ID Program Studi</label>
+		    <input type="text" class="form-control" id="id_prodi" name="id_prodi" th:value="${student.id_prodi}" th:field="${student.id_prodi}" />
+		  </div>
+		  <button type="submit" class="btn btn-primary">Simpan</button>
+	</form>
+	<div th:replace="fragments/fragment :: footer"></div>
+</body>
+</html>
+
